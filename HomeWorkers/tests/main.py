@@ -2,10 +2,10 @@ import CONST
 from telethon import events
 from telethon.sync import TelegramClient
 
-phone = CONST.phone
-api_id = CONST.api_id
-api_hash = CONST.api_hash
-client = TelegramClient(phone, api_id, api_hash)
+SESSION_NAME = CONST.SESSION_NAME
+API_ID = CONST.API_ID
+API_HASH = CONST.API_HASH
+client = TelegramClient(SESSION_NAME, API_ID, API_HASH)
 
 async def main():
     await client.start()
