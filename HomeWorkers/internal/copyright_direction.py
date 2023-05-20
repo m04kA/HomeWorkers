@@ -40,7 +40,24 @@ def is_copyright_UWORK(message: str) -> str:
     if not orders:
         return ''
     return f'#Копирайт\n' \
-           f'Количество заказов - {len(orders)}'
+           f'Количество заказов - {len(orders)}\n'
 
 
+def is_smm_UWORK(message: str) -> str:
+    if 'Откликнуться' not in message:
+        return ''
+    orders = re.findall(REGEX.regex_smm, message)
+    if not orders:
+        return ''
+    return f'#SMM\n' \
+           f'Количество заказов - {len(orders)}\n'
 
+
+def is_design_UWORK(message: str) -> str:
+    if 'Откликнуться' not in message:
+        return ''
+    orders = re.findall(REGEX.regex_design, message)
+    if not orders:
+        return ''
+    return f'#Дизайн\n' \
+           f'Количество заказов - {len(orders)}\n'
